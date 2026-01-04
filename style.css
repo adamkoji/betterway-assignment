@@ -9,7 +9,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
 
-/* --- FULL WIDTH BLUE HEADER --- */
 .header {
     background-color: var(--primary);
     width: 100%;
@@ -42,7 +41,7 @@ body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
 
 .cart-toggle:hover { transform: scale(1.05); }
 
-/* --- PAGE LAYOUT --- */
+
 .app-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -79,7 +78,7 @@ body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
 
 .product-card:hover { 
     transform: scale(1.03); 
-    background-color: #f3f4f6; /* Grayish hover */
+    background-color: #f3f4f6; /* hover */
 }
 
 .product-image-container {
@@ -102,7 +101,7 @@ body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent Dark Grey */
+    background-color: rgba(0, 0, 0, 0.6); 
     color: white;
     padding: 10px 20px;
     border-radius: 12px;
@@ -129,7 +128,7 @@ body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
 }
 
 .add-to-cart:hover:not(:disabled) { 
-    background: #6366f1; /* Brighter Blue */
+    background: #6366f1; 
     filter: brightness(1.1); 
 }
 
@@ -144,3 +143,4 @@ body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden; }
 .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; }
 .cart-item { display: flex; gap: 15px; margin: 20px 0; align-items: center; border-bottom: 1px solid #f8fafc; padding-bottom: 12px; }
 .cart-item img { width: 60px; height: 60px; object-fit: contain; }
+
