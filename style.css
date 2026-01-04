@@ -1,0 +1,131 @@
+:root {
+    --primary: #4f46e5;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --danger: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+
+body { background-color: #f1f5f9; color: var(--dark); overflow-x: hidden;}
+
+/* --- FULL WIDTH BLUE HEADER --- */
+.header {
+    background-color: var(--primary);
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 { color: white; margin: 0; font-size: 1.8rem; }
+
+.cart-toggle {
+    background: white;
+    color: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cart-toggle:hover { transform: scale(1.05); }
+
+/* --- PAGE LAYOUT --- */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+.filter-bar {
+    display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;
+}
+
+.search-input, .filter-select, .sort-select {
+    padding: 10px; border: 1px solid var(--gray); border-radius: 6px; flex: 1; min-width: 150px;
+}
+
+.clear-filters {
+    background: var(--danger); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;
+}
+
+.products-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px;
+}
+
+/* --- PRODUCT CARDS --- */
+.product-card { 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+    padding: 15px;
+    /* Smooth transition for all changes */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+/* Effect when hovering over the card */
+.product-card:hover {
+    transform: scale(1.03); /* Expands a little bit */
+    background-color: #f3f4f6; /* Turns a little gray (Light Gray) */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Adds depth when expanding */
+}
+
+.product-image { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: contain; 
+    margin-bottom: 15px;
+    background: white; /* Keeps image background clean if the card turns gray */
+    border-radius: 8px;
+}
+.product-title { font-size: 1.1rem; margin-bottom: 10px; height: 2.4em; overflow: hidden; }
+.product-price { color: var(--primary); font-weight: bold; font-size: 1.2rem; margin-bottom: 5px; }
+.product-category { color: var(--gray); text-transform: capitalize; margin-bottom: 10px; font-size: 0.9rem; }
+.add-to-cart { 
+    width: 100%; 
+    padding: 12px; 
+    background: #4f46e5; /* Your current blue */
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: bold;
+    transition: background-color 0.2s ease, filter 0.2s ease;
+}
+
+/* Effect when hovering over the button */
+.add-to-cart:hover:not(:disabled) {
+    background-color: #6366f1; /* A lighter/brighter blue shade */
+    filter: brightness(1.15); /* Adds extra brightness boost */
+}
+
+.add-to-cart:disabled { 
+    background: var(--gray); 
+    cursor: not-allowed; 
+    filter: none; /* No hover effect when disabled */
+}
+
+/* --- CART OVERLAY --- */
+.cart-overlay {
+    position: fixed; top: 0; right: 0; width: 400px; height: 100%; background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1); transform: translateX(100%); transition: 0.3s; z-index: 1000; padding: 25px;
+}
+.cart-overlay.open { transform: translateX(0); }
+.cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+.cart-item { display: flex; gap: 15px; margin: 20px 0; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 10px; }
+.cart-item img { width: 50px; height: 50px; object-fit: cover; }
